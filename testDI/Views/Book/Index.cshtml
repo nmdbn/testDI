@@ -1,0 +1,35 @@
+﻿@model IEnumerable<testDI.Models.Book>
+
+<h2>Books</h2>
+
+<!-- Link để thêm sách mới -->
+<a href="@Url.Action("Create")" class="btn btn-primary">Create New Book</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Price</th>
+            <th>Img</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@book.Title</td>
+                <td>@book.Author</td>
+                <td>@book.Price</td>
+                <td><img src="@book.Image" alt="Book Image" class="img-thumbnail" style="max-width: 150px;" /></td>
+
+                <td>
+                    <a href="@Url.Action("Details", new { id = book.Id })" class="btn btn-info">Details</a>
+                    <a href="@Url.Action("Edit", new { id = book.Id })" class="btn btn-warning">Edit</a>
+                    <a href="@Url.Action("Delete", new { id = book.Id })" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

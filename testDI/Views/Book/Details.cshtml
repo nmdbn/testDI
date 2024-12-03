@@ -1,0 +1,13 @@
+﻿@model testDI.Models.Book
+
+<h2>Book Details</h2>
+
+<div>
+    <h3>@Model.Title</h3>
+    <p><strong>Author:</strong> @Model.Author</p>
+    <p><strong>Description:</strong> @Model.Description</p>
+    <p><strong>Price:</strong> @Model.Price</p>
+    <p><strong>Image:</strong> <img src="@Model.Image" alt="Book Image" width="150" /></p>
+</div>
+
+<a href="@Url.Action("Index")" class="btn btn-primary">Back to List</a>
